@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import logo from "./imagenes/freecodecampLogo.jpg";
+import Contador from "./componentes/Contador.js";
+import Boton from "./componentes/Boton.js";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [numClics, setNumClics] = useState(0);
+
+    const incrementarContador = () => {
+        console.log("clic");
+        setNumClics(numClics + 1);
+    };
+
+    const reiniciarContador = () => {
+        console.log("reiniciar");
+        setNumClics(0);
+    };
+
+    return (
+        <div className="App">
+            <div className="contenedorPrincipal">
+                <header>
+                    <img id="hero" alt="logo freecodecamp" src={logo} />
+                </header>
+
+                <main className="main">
+                    <Contador numClics={numClics}></Contador>
+                    <Boton
+                        esBotonDeClic={true}
+                        manejarClic={incrementarContador}
+                    ></Boton>
+                    <Boton
+                        esBotonDeClic={false}
+                        manejarClic={reiniciarContador}
+                    ></Boton>
+                </main>
+            </div>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,22 @@
+button {
+    display: block;
+    min-width: 200px;
+    min-height: 50px;
+    border: 2px solid white;
+    background-color: #002caf;
+    color: white;
+    border-radius: 7px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #01451c;
+}
+button:active {
+    background-color: #00350c;
+}
+
+.BotonReiniciar {
+    background-color: #5a01a8;
+}
